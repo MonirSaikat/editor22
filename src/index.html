@@ -1,55 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jQuery Text Editor</title>
-    <link rel="stylesheet" href="css/theme-light.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-</head>
-<body>
-    <div class="editor">
-        <div class="editor-toolbar">
-            <button data-command="bold"><b>B</b></button>
-            <button data-command="italic"><i>I</i></button>
-            <button data-command="underline"><u>U</u></button>
-            <button data-command="strikeThrough"><s>S</s></button>
-            <button data-command="overline" class="overline">O</button>
-            <input type="color" id="textColor" title="Text Color">
-            <select id="alignment">
-                <option value="">Align</option>
-                <option value="justifyLeft">Left</option>
-                <option value="justifyCenter">Center</option>
-                <option value="justifyRight">Right</option>
-                <option value="justifyFull">Justify</option>
-            </select>
-            <button data-command="insertOrderedList">OL</button>
-            <button data-command="insertUnorderedList">UL</button>
-            <select id="fontSize">
-                <option value="h1">H1</option>
-                <option value="h2">H2</option>
-                <option value="h3">H3</option>
-                <option value="h4">H4</option>
-                <option value="h5">H5</option>
-                <option value="h6">H6</option>
-                <option value="p">P</option>
-            </select>
-            <select id="fontFamily">
-                <option value="Arial">Arial</option>
-                <option value="Courier New">Courier New</option>
-                <option value="Georgia">Georgia</option>
-                <option value="Times New Roman">Times New Roman</option>
-                <option value="Verdana">Verdana</option>
-            </select>
-            <button id="imageUrl">Image URL</button>
-            <button data-command="undo">Undo</button>
-            <button data-command="redo">Redo</button>
-        </div>
-        <div class="editor-content" contenteditable="true"></div>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editor 22</title>
+    <link rel="stylesheet" href="css/theme-light.css" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+  </head>
+  <body>
+    <!-- <button class="get-content">Get Content</button>
+    <button class="set-content">Set Content</button>
+    <br /> -->
+
+    <div class="editor"></div>
 
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/jquery-ui/dist/jquery-ui.min.js"></script>
     <script src="js/editor.js"></script>
-</body>
+
+    <script>
+      $(document).ready(function () {
+        const editor = $(".editor").textEditor();
+
+        $('.get-content').on('click', function() {
+          console.log(editor.getContent());
+        });
+
+        $('.set-content').on('click', function() {
+          editor.setContent(`<h1><font face="monospace">Heading Onej</font></h1><div><font face="monospace">DUh</font></div>`);
+        });
+        
+        // editor.setContent(`<h1><font face="monospace">Heading Onej</font></h1><div><font face="monospace">DUh</font></div>`);
+      });
+    </script>
+  </body>
 </html>

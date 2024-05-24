@@ -1,12 +1,8 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f0f0f0;
+  background: #330000;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .editor {
@@ -17,6 +13,12 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   overflow: hidden;
+}
+.editor.fullscreen {
+  min-width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  border-radius: 0;
 }
 .editor .editor-toolbar {
   background: #f8f9fa;
@@ -31,19 +33,26 @@ body {
   cursor: pointer;
   border: 1px solid #ddd;
   background: #fff;
-  color: #007bff;
+  color: #8aa2bc;
   border-radius: 4px;
+  min-height: 38px;
   transition: background 0.3s;
+  outline: 0;
+}
+.editor .editor-toolbar button svg, .editor .editor-toolbar select svg, .editor .editor-toolbar input[type=color] svg {
+  width: 16px;
+  height: 16px;
 }
 .editor .editor-toolbar button:hover, .editor .editor-toolbar select:hover, .editor .editor-toolbar input[type=color]:hover {
+  color: #330000;
   background: #e9ecef;
 }
 .editor .editor-content {
   border: 1px solid #ddd;
-  min-height: 300px;
   padding: 15px;
   background: #fff;
   outline: none;
+  min-height: calc(100vh - 95px);
 }
 .editor .editor-content img {
   max-width: 100%;
@@ -67,7 +76,7 @@ body {
   max-width: 100%;
 }
 .editor .editor-content .resizable .ui-resizable-handle {
-  background: #007bff;
+  background: #8aa2bc;
   width: 8px;
   height: 8px;
   z-index: 90;

@@ -3,10 +3,6 @@ body {
   background: #d3d3d3;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .editor {
@@ -17,6 +13,12 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   overflow: hidden;
+}
+.editor.fullscreen {
+  min-width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  border-radius: 0;
 }
 .editor .editor-toolbar {
   background: #4682b4;
@@ -33,17 +35,24 @@ body {
   background: #fff;
   color: #1e90ff;
   border-radius: 4px;
+  min-height: 38px;
   transition: background 0.3s;
+  outline: 0;
+}
+.editor .editor-toolbar button svg, .editor .editor-toolbar select svg, .editor .editor-toolbar input[type=color] svg {
+  width: 16px;
+  height: 16px;
 }
 .editor .editor-toolbar button:hover, .editor .editor-toolbar select:hover, .editor .editor-toolbar input[type=color]:hover {
+  color: #d3d3d3;
   background: #6495ed;
 }
 .editor .editor-content {
   border: 1px solid #5f9ea0;
-  min-height: 300px;
   padding: 15px;
   background: #b0c4de;
   outline: none;
+  min-height: calc(100vh - 95px);
 }
 .editor .editor-content img {
   max-width: 100%;

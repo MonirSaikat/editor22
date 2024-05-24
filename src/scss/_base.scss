@@ -2,11 +2,7 @@ body {
   font-family: $font-family;
   background: $background-color;
   margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  padding: 0; 
 }
 
 .editor {
@@ -18,6 +14,13 @@ body {
   border-radius: 5px;
   overflow: hidden;
 
+  &.fullscreen {
+    min-width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    border-radius: 0;
+  }
+  
   .editor-toolbar {
     background: $toolbar-background;
     border-bottom: 1px solid $border-color;
@@ -30,12 +33,20 @@ body {
       padding: 8px 12px;
       cursor: pointer;
       border: 1px solid $border-color;
-      background: #fff;
+      background: $toolbar-button-bg;
       color: $primary-color;
       border-radius: 4px;
+      min-height: 38px;
       transition: background 0.3s;
+      outline: 0;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
 
       &:hover {
+        color: $background-color;
         background: $hover-background;
       }
     }
@@ -43,10 +54,10 @@ body {
 
   .editor-content {
     border: 1px solid $border-color;
-    min-height: 300px;
     padding: 15px;
     background: $content-background;
     outline: none;
+    min-height: calc(100vh - 95px);
 
     img {
       max-width: 100%;
