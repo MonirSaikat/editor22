@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #343a40;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.editor {
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto;
+  background: #212529;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.editor .editor-toolbar {
+  background: #495057;
+  border-bottom: 1px solid #555;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.editor .editor-toolbar button, .editor .editor-toolbar select, .editor .editor-toolbar input[type=color] {
+  margin: 2px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border: 1px solid #555;
+  background: #fff;
+  color: #17a2b8;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.editor .editor-toolbar button:hover, .editor .editor-toolbar select:hover, .editor .editor-toolbar input[type=color]:hover {
+  background: #6c757d;
+}
+.editor .editor-content {
+  border: 1px solid #555;
+  min-height: 300px;
+  padding: 15px;
+  background: #343a40;
+  outline: none;
+}
+.editor .editor-content img {
+  max-width: 100%;
+  display: inline-block;
+  margin: 5px 0;
+}
+.editor .editor-content img.align-left {
+  float: left;
+  margin-right: 10px;
+}
+.editor .editor-content img.align-right {
+  float: right;
+  margin-left: 10px;
+}
+.editor .editor-content img.align-center {
+  display: block;
+  margin: 0 auto;
+}
+.editor .editor-content .resizable {
+  display: inline-block;
+  max-width: 100%;
+}
+.editor .editor-content .resizable .ui-resizable-handle {
+  background: #17a2b8;
+  width: 8px;
+  height: 8px;
+  z-index: 90;
+}

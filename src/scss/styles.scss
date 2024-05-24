@@ -1,0 +1,94 @@
+$primary-color: #007bff;
+$background-color: #f0f0f0;
+$editor-background: #fff;
+$toolbar-background: #f8f9fa;
+$content-background: #fff;
+$border-color: #ddd;
+$hover-background: #e9ecef;
+$resizable-handle-color: $primary-color;
+$font-family: Arial, sans-serif;
+
+body {
+  font-family: $font-family;
+  background: $background-color;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.editor {
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto;
+  background: $editor-background;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+
+  .editor-toolbar {
+    background: $toolbar-background;
+    border-bottom: 1px solid $border-color;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+
+    button, select, input[type="color"] {
+      margin: 2px;
+      padding: 8px 12px;
+      cursor: pointer;
+      border: 1px solid $border-color;
+      background: #fff;
+      color: $primary-color;
+      border-radius: 4px;
+      transition: background 0.3s;
+
+      &:hover {
+        background: $hover-background;
+      }
+    }
+  }
+
+  .editor-content {
+    border: 1px solid $border-color;
+    min-height: 300px;
+    padding: 15px;
+    background: $content-background;
+    outline: none;
+
+    img {
+      max-width: 100%;
+      display: inline-block;
+      margin: 5px 0;
+
+      &.align-left {
+        float: left;
+        margin-right: 10px;
+      }
+
+      &.align-right {
+        float: right;
+        margin-left: 10px;
+      }
+
+      &.align-center {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    .resizable {
+      display: inline-block;
+      max-width: 100%;
+
+      .ui-resizable-handle {
+        background: $resizable-handle-color;
+        width: 8px;
+        height: 8px;
+        z-index: 90;
+      }
+    }
+  }
+}
