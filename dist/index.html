@@ -4,11 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Editor 22</title>
-    <link rel="stylesheet" href="css/theme-light.css" />
-    <link
-      rel="stylesheet"
-      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-    />
+    <link rel="stylesheet" href="css/theme-blue.css" />
+
   </head>
   <body>
     <!-- <button class="get-content">Get Content</button>
@@ -17,22 +14,22 @@
 
     <div class="editor"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="js/editor.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./js/editor.js"></script>
 
     <script>
       $(document).ready(function () {
-        const editor = $(".editor").textEditor();
+        const editor = $(".editor").textEditor({
+          options: ['bold', 'fontFamily', 'image']
+        });
 
         $('.get-content').on('click', function() {
-          console.log(editor.getContent());
         });
 
         $('.set-content').on('click', function() {
-          editor.setContent(`<h1><font face="monospace">Heading Onej</font></h1><div><font face="monospace">DUh</font></div>`);
+          editor.setContent(`<h1><font face="monospace">Heading One</font></h1><div><font face="monospace">DUh</font></div>`);
         });
         
-        // editor.setContent(`<h1><font face="monospace">Heading Onej</font></h1><div><font face="monospace">DUh</font></div>`);
       });
     </script>
   </body>
