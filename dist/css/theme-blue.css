@@ -29,13 +29,13 @@ body {
 }
 .editor .editor-toolbar button, .editor .editor-toolbar select, .editor .editor-toolbar input[type=color] {
   margin: 2px;
-  padding: 8px 12px;
+  padding: 5px 10px;
   cursor: pointer;
   border: 1px solid #5f9ea0;
   background: #fff;
   color: #1e90ff;
   border-radius: 4px;
-  min-height: 38px;
+  min-height: 32px;
   transition: background 0.3s;
   outline: 0;
 }

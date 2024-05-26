@@ -30,13 +30,13 @@ body {
 
     button, select, input[type="color"] {
       margin: 2px;
-      padding: 8px 12px;
+      padding: 5px 10px;
       cursor: pointer;
       border: 1px solid $border-color;
       background: $toolbar-button-bg;
       color: $primary-color;
       border-radius: 4px;
-      min-height: 38px;
+      min-height: 32px;
       transition: background 0.3s;
       outline: 0;
 
